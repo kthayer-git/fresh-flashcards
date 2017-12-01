@@ -19,11 +19,17 @@
 
     var callback = function(){
       // Handler when the DOM is fully loaded
+
+      // ASSIGNS ELEMENTS TO VARIABLES
       let cardContent = document.getElementById("card-content");
       let flipButton = document.getElementById("flip");
       let nextButton = document.getElementById("next");
       let previousButton = document.getElementById("previous");
 
+      // ADDS EVENT HANDLER TO BUTTONS
+      flipButton.onclick = flipCard;
+      nextButton.onclick = nextCard;
+      previousButton.onclick = previousCard;
 
     };
 
