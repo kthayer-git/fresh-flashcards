@@ -45,6 +45,11 @@
 
       // TOGGLES FLASHCARD
       function flipCard() {
+        if (cardContent.innerText === qAndA[place][0]) {
+          cardContent.innerText = qAndA[place][1];
+        } else {
+          cardContent.innerText = qAndA[place][0];
+        }
       }
 
       // ADVANCE TO NEXT CARD
