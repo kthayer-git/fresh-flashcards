@@ -15,6 +15,23 @@
     <button id="next">Next</button>
     <button id="previous">Previous</button>
 
+    <script type="text/javascript">
+
+    var callback = function(){
+      // Handler when the DOM is fully loaded
+    };
+
+    if (
+        document.readyState === "complete" ||
+        (document.readyState !== "loading" && !document.documentElement.doScroll)
+    ) {
+      callback();
+    } else {
+      document.addEventListener("DOMContentLoaded", callback);
+    }
+
+    </script>
+
   </body>
 
 </html>
