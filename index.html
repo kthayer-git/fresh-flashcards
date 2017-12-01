@@ -21,11 +21,11 @@
 
       // FLASHCARD CONTENT
       let qAndA = [
-        ['twin bullhorn bracket image', 'twin bullhorn bracket'],
-        ['single cantilever bracket image', 'single cantilever bracket'],
-        ['continuous upsweep bracket image', 'continuous upsweep bracket'],
-        ['continuous upsweep bracket with underbrace image', 'continuous upsweep bracket with underbrace'],
-        ['twin bullhorn bracket image', 'twin bullhorn bracket']
+        ['Flashcard 1 question', 'Flashcard 1 answer'],
+        ['Flashcard 2 question', 'Flashcard 2 answer'],
+        ['Flashcard 3 question', 'Flashcard 3 answer'],
+        ['Flashcard 4 question', 'Flashcard 4 answer'],
+        ['Flashcard 5 question', 'Flashcard 5 answer'],
       ];
 
       // ASSIGNS ELEMENTS TO VARIABLES
@@ -54,13 +54,17 @@
 
       // ADVANCE TO NEXT CARD
       function nextCard() {
-        place = place + 1;
+        if (place < qAndA.length - 1) {
+          place = place + 1;
+        }
         cardContent.innerText = qAndA[place][0];
       }
 
       // ADVANCE TO PREVIOUS CARD
       function previousCard() {
-        place = place - 1;
+        if (place > 0) {
+          place = place - 1;
+        }
         cardContent.innerText = qAndA[place][0];
       }
 
