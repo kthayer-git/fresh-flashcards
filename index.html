@@ -14,6 +14,7 @@
     <button id="flip">Flip</button>
     <button id="next">Next</button>
     <button id="previous">Previous</button>
+    <button id="random">Random</button>
 
     <script type="text/javascript">
 
@@ -33,11 +34,13 @@
       let flipButton = document.getElementById("flip");
       let nextButton = document.getElementById("next");
       let previousButton = document.getElementById("previous");
+      let randomButton = document.getElementById("random");
 
       // ADDS EVENT HANDLER TO BUTTONS
       flipButton.onclick = flipCard;
       nextButton.onclick = nextCard;
       previousButton.onclick = previousCard;
+      randomButton.onclick = randomCard;
 
       // INITIAL VALUES
       cardContent.innerText = qAndA[0][0];
@@ -65,6 +68,20 @@
         if (place > 0) {
           place = place - 1;
         }
+        cardContent.innerText = qAndA[place][0];
+      }
+
+      // FUNCTION FOR GENERATING A RANDOM NUMBER INCLUSIVE OF THE MINIMUM AND MAXIMUM INTERGER IN A RANGE
+      // SEE https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+      function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
+      }
+
+      // ADVANCE TO RANDOM CARD
+      function randomCard() {
+        place = getRandomIntInclusive(0, qAndA.length)
         cardContent.innerText = qAndA[place][0];
       }
 
