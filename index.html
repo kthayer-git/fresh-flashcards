@@ -6,9 +6,18 @@
     <title>title</title>
   </head>
 
+  <style>
+
+    img {
+      width: 200px;
+    }
+
+  </style>
+
   <body>
 
     <div id="card">
+      <img id="card-image" src="">
       <h1 id="card-content"></h1>
     </div>
     <button id="flip">Flip</button>
@@ -22,11 +31,11 @@
 
       // FLASHCARD CONTENT
       let qAndA = [
-        ['Flashcard 1 question', 'Flashcard 1 answer'],
-        ['Flashcard 2 question', 'Flashcard 2 answer'],
-        ['Flashcard 3 question', 'Flashcard 3 answer'],
-        ['Flashcard 4 question', 'Flashcard 4 answer'],
-        ['Flashcard 5 question', 'Flashcard 5 answer'],
+        ['Flashcard 1 question', 'Flashcard 1 answer', 'placeholder.jpg'],
+        ['Flashcard 2 question', 'Flashcard 2 answer', 'placeholder1.jpg'],
+        ['Flashcard 3 question', 'Flashcard 3 answer', 'placeholder2.jpg'],
+        ['Flashcard 4 question', 'Flashcard 4 answer', 'placeholder3.jpg'],
+        ['Flashcard 5 question', 'Flashcard 5 answer', 'placeholder4.jpg'],
       ];
 
       // ASSIGNS ELEMENTS TO VARIABLES
@@ -35,6 +44,7 @@
       let nextButton = document.getElementById("next");
       let previousButton = document.getElementById("previous");
       let randomButton = document.getElementById("random");
+      let cardImage = document.getElementById("card-image");
 
       // ADDS EVENT HANDLER TO BUTTONS
       flipButton.onclick = flipCard;
@@ -45,6 +55,7 @@
       // INITIAL VALUES
       cardContent.innerText = qAndA[0][0];
       var place = 0;
+      cardImage.src = "img/" + qAndA[place][2];
 
       // TOGGLES FLASHCARD
       function flipCard() {
@@ -61,6 +72,7 @@
           place = place + 1;
         }
         cardContent.innerText = qAndA[place][0];
+        cardImage.src = "img/" + qAndA[place][2];
       }
 
       // ADVANCE TO PREVIOUS CARD
