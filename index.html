@@ -56,11 +56,6 @@
           answer: 'Answer 5',
           image: 'placeholder4.jpg'
         },
-        // ['Flashcard 1 question', 'Flashcard 1 answer', 'placeholder.jpg'],
-        // ['Flashcard 2 question', 'Flashcard 2 answer', 'placeholder1.jpg'],
-        // ['Flashcard 3 question', 'Flashcard 3 answer', 'placeholder2.jpg'],
-        // ['Flashcard 4 question', 'Flashcard 4 answer', 'placeholder3.jpg'],
-        // ['Flashcard 5 question', 'Flashcard 5 answer', 'placeholder4.jpg'],
       ];
 
       // ASSIGNS ELEMENTS TO VARIABLES
@@ -82,7 +77,7 @@
       var place = 0;
       cardImage.src = "img/" + qAndA[place].image;
 
-      // TOGGLES FLASHCARD
+      // TOGGLE FLASHCARD
       function flipCard() {
         if (cardContent.innerText === qAndA[place].question) {
           cardContent.innerText = qAndA[place].answer;
@@ -106,6 +101,7 @@
           place = place - 1;
         }
         cardContent.innerText = qAndA[place].question;
+        cardImage.src = "img/" + qAndA[place].image;
       }
 
       // FUNCTION FOR GENERATING A RANDOM NUMBER INCLUSIVE OF THE MINIMUM AND MAXIMUM INTERGER IN A RANGE
@@ -120,6 +116,7 @@
       function randomCard() {
         place = getRandomIntInclusive(0, qAndA.length)
         cardContent.innerText = qAndA[place].question;
+        cardImage.src = "img/" + qAndA[place].image;
       }
 
     };
