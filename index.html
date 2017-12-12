@@ -31,11 +31,36 @@
 
       // FLASHCARD CONTENT
       let qAndA = [
-        ['Flashcard 1 question', 'Flashcard 1 answer', 'placeholder.jpg'],
-        ['Flashcard 2 question', 'Flashcard 2 answer', 'placeholder1.jpg'],
-        ['Flashcard 3 question', 'Flashcard 3 answer', 'placeholder2.jpg'],
-        ['Flashcard 4 question', 'Flashcard 4 answer', 'placeholder3.jpg'],
-        ['Flashcard 5 question', 'Flashcard 5 answer', 'placeholder4.jpg'],
+        {
+          question: 'Question 1',
+          answer: 'Answer 1',
+          image: 'placeholder.jpg'
+        },
+        {
+          question: 'Question 2',
+          answer: 'Answer 2',
+          image: 'placeholder1.jpg'
+        },
+        {
+          question: 'Question 3',
+          answer: 'Answer 3',
+          image: 'placeholder2.jpg'
+        },
+        {
+          question: 'Question 4',
+          answer: 'Answer 4',
+          image: 'placeholder3.jpg'
+        },
+        {
+          question: 'Question 5',
+          answer: 'Answer 5',
+          image: 'placeholder4.jpg'
+        },
+        // ['Flashcard 1 question', 'Flashcard 1 answer', 'placeholder.jpg'],
+        // ['Flashcard 2 question', 'Flashcard 2 answer', 'placeholder1.jpg'],
+        // ['Flashcard 3 question', 'Flashcard 3 answer', 'placeholder2.jpg'],
+        // ['Flashcard 4 question', 'Flashcard 4 answer', 'placeholder3.jpg'],
+        // ['Flashcard 5 question', 'Flashcard 5 answer', 'placeholder4.jpg'],
       ];
 
       // ASSIGNS ELEMENTS TO VARIABLES
@@ -53,16 +78,16 @@
       randomButton.onclick = randomCard;
 
       // INITIAL VALUES
-      cardContent.innerText = qAndA[0][0];
+      cardContent.innerText = qAndA[0].question;
       var place = 0;
-      cardImage.src = "img/" + qAndA[place][2];
+      cardImage.src = "img/" + qAndA[place].image;
 
       // TOGGLES FLASHCARD
       function flipCard() {
-        if (cardContent.innerText === qAndA[place][0]) {
-          cardContent.innerText = qAndA[place][1];
+        if (cardContent.innerText === qAndA[place].question) {
+          cardContent.innerText = qAndA[place].answer;
         } else {
-          cardContent.innerText = qAndA[place][0];
+          cardContent.innerText = qAndA[place].question;
         }
       }
 
@@ -71,8 +96,8 @@
         if (place < qAndA.length - 1) {
           place = place + 1;
         }
-        cardContent.innerText = qAndA[place][0];
-        cardImage.src = "img/" + qAndA[place][2];
+        cardContent.innerText = qAndA[place].question;
+        cardImage.src = "img/" + qAndA[place].image;
       }
 
       // ADVANCE TO PREVIOUS CARD
@@ -80,7 +105,7 @@
         if (place > 0) {
           place = place - 1;
         }
-        cardContent.innerText = qAndA[place][0];
+        cardContent.innerText = qAndA[place].question;
       }
 
       // FUNCTION FOR GENERATING A RANDOM NUMBER INCLUSIVE OF THE MINIMUM AND MAXIMUM INTERGER IN A RANGE
@@ -94,7 +119,7 @@
       // ADVANCE TO RANDOM CARD
       function randomCard() {
         place = getRandomIntInclusive(0, qAndA.length)
-        cardContent.innerText = qAndA[place][0];
+        cardContent.innerText = qAndA[place].question;
       }
 
     };
