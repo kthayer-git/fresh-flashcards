@@ -2,7 +2,7 @@
 A CSS, HTML, and vanilla JavaScript flashcard app
 
 ### Future Features
-Record creation, updating, and deletion
+* Record creation, updating, and deletion
 * Flachcard search
 * Image uploading
 * Multimedia uploading
