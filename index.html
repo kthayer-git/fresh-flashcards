@@ -27,6 +27,7 @@
     <button id="random">Random</button>
     <button id="new-card">New Card</button>
 
+    <!-- ADD CARD FORM -->
     <form id="add-form" style="display: none;">
       Question:<br>
       <input type="text" name="question"><br>
@@ -151,12 +152,20 @@
         cardImage.src = "img/" + qAndA[place].image;
       }
 
-      // CREATE NEW FLASHCARD
+      // TOGGLE NEW CARD FORM
       function newCard() {
         var x = document.getElementById('add-form');
         if (x.style.display === "none") {
             x.style.display = "block";
         } else { x.style.display = "none";}
+
+      }
+
+      // SUBMIT NEW CARD
+      function submitCard() {
+        var y = document.getElementById("add-form");
+        let addQuestion = y.elements[0].value;
+        qAndA.push(addQuestion);
       }
 
     };
