@@ -20,11 +20,19 @@
       <img id="card-image" src="">
       <h1 id="card-content"></h1>
     </div>
+
     <button id="flip">Flip</button>
     <button id="next">Next</button>
     <button id="previous">Previous</button>
     <button id="random">Random</button>
     <button id="new-card">New Card</button>
+
+    <form id="add-form" style="display: none;">
+      Question:<br>
+      <input type="text" name="question"><br>
+      Answer:<br>
+      <input type="text" name="answer">
+    </form>
 
     <script type="text/javascript">
 
@@ -145,7 +153,10 @@
 
       // CREATE NEW FLASHCARD
       function newCard() {
-
+        var x = document.getElementById('add-form');
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else { x.style.display = "none";}
       }
 
     };
