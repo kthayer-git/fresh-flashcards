@@ -24,6 +24,7 @@
     <button id="next">Next</button>
     <button id="previous">Previous</button>
     <button id="random">Random</button>
+    <button id="new-card">New Card</button>
 
     <script type="text/javascript">
 
@@ -90,12 +91,14 @@
       let previousButton = document.getElementById("previous");
       let randomButton = document.getElementById("random");
       let cardImage = document.getElementById("card-image");
+      let newCardButton = document.getElementById("new-card");
 
       // ADDS EVENT HANDLER TO BUTTONS
       flipButton.onclick = flipCard;
       nextButton.onclick = nextCard;
       previousButton.onclick = previousCard;
       randomButton.onclick = randomCard;
+      newCardButton.onclick = newCard;
 
       // INITIAL VALUES
       cardContent.innerText = qAndA[0].question;
@@ -138,6 +141,11 @@
         }
         cardContent.innerText = qAndA[place].question;
         cardImage.src = "img/" + qAndA[place].image;
+      }
+
+      // CREATE NEW FLASHCARD
+      function newCard() {
+
       }
 
     };
