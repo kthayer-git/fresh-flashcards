@@ -9,7 +9,7 @@
   <style>
 
     img {
-      width: 200px;
+      height: 200px;
     }
 
   </style>
@@ -54,6 +54,31 @@
         {
           question: 'Question 5',
           answer: 'Answer 5',
+          image: 'placeholder4.jpg'
+        },
+        {
+          question: 'Question 6',
+          answer: 'Answer 6',
+          image: 'placeholder.jpg'
+        },
+        {
+          question: 'Question 7',
+          answer: 'Answer 7',
+          image: 'placeholder1.jpg'
+        },
+        {
+          question: 'Question 8',
+          answer: 'Answer 8',
+          image: 'placeholder2.jpg'
+        },
+        {
+          question: 'Question 9',
+          answer: 'Answer 9',
+          image: 'placeholder3.jpg'
+        },
+        {
+          question: 'Question 10',
+          answer: 'Answer 10',
           image: 'placeholder4.jpg'
         },
       ];
@@ -104,17 +129,13 @@
         cardImage.src = "img/" + qAndA[place].image;
       }
 
-      // FUNCTION FOR GENERATING A RANDOM NUMBER INCLUSIVE OF THE MINIMUM AND MAXIMUM INTERGER IN A RANGE
-      // SEE https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-      function getRandomIntInclusive(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
-      }
-
       // ADVANCE TO RANDOM CARD
       function randomCard() {
-        place = getRandomIntInclusive(0, qAndA.length)
+        let oldPlace = place;
+        while (oldPlace === place || place === undefined) {
+          let random = Math.floor(Math.random() * (qAndA.length - 0 + 1)) + 0;
+          place = random;
+        }
         cardContent.innerText = qAndA[place].question;
         cardImage.src = "img/" + qAndA[place].image;
       }
